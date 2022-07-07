@@ -4,7 +4,7 @@
     * @param Int $lenght
     * @return String
     * @author Godstime
-    * This task generate different types and unique password of 8 length
+    * This task generate random password of 8 length
 */
 
 function passwordGenerator($lenght)
