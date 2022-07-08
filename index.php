@@ -144,6 +144,26 @@ try {
 }
 echo "<br>--------------------------<br>"
 
+/*
+DESCRIPTION:
+Complete the function that accepts a string parameter, and reverses each word in the string. 
+All spaces in the string should be retained.
+*/
+
+function reverseWords($str) {
+   $newArr = [];
+    $a = explode(" ",$str);
+    for ($i=0; $i < count($a); $i++) { 
+       array_push($newArr,strrev($a[$i]));
+    }
+    return join(" ",$newArr);
+}
+echo reverseWords('ehT kciuq nworb xof spmuj revo eht yzal .god');
+// print_r(reverseWords('The quick brown fox jumps over the lazy dog.'));
+echo "<br>";
+echo reverseWords('Godstime is the best');
+echo "<br>--------------------------<br>";
+
 
 
 
