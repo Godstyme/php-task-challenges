@@ -199,7 +199,70 @@ echo json_encode(countPositivesSumNegatives([-15, 2, 3, 4, 5, -11, 7, 8, 9, 10, 
 echo "<br>--------------------------<br>";
 
 
+/**
+ 	* @param  $array
+	* @return $int
+	* @author Godstime
+	* @DESCRIPTION:  
+	* In this simple exercise, you will create a program that will take two lists of integers, a and b.
+	* Each list will consist of 3 positive integers above 0, representing the dimensions of cuboids a and b. 
+	* You must find the difference of the cuboids' volumes regardless of which is bigger.
+	* For example, if the parameters passed are ([2, 2, 3], [5, 4, 1]), the volume of a is 12 and the volume of b is 20. Therefore, the function should return 8.
+	* Your function will be tested with pre-made examples as well as random ones.
+	* If you can, try writing it in one line of code. 
+*/
+function findDifference($a, $b) {
+	return abs(array_product($a) - array_product($b));
+ }
+ echo findDifference([3, 2, 5], [1, 4, 4]);
+ echo "<br>";
+ echo findDifference([2, 2, 3], [5, 4, 1]);
+ echo "<br>--------------------------<br>";
 
 
+ /**
+ 	* @param  $array
+	* @return $int
+	* @author Godstime
+	* @DESCRIPTION:  
+	* You get an array of numbers, return the sum of all of the positives ones.
+	* Example [1,-4,7,12] => 1 + 7 + 12 = 20
+	* Note: if there is nothing to sum, the sum is default to 0.
+*/
+ function positive_sum($arr) {
+	$positiveNum = 0;
+	for ($i=0; $i < count($arr); $i++) { 
+		if ($arr[$i] > 0) {
+			$positiveNum += $arr[$i]; 
+		} 
+	}
+	return $positiveNum;
+ }
+ echo positive_sum([1,-4,7,12] );
+ echo "<br>--------------------------<br>";
+
+
+  /**
+ 	* @param  $int
+	* @return $int
+	* @author Godstime
+	* @DESCRIPTION:  Grasshopper - Terminal game move function
+	* In this game, the hero moves from left to right. 
+	* The player rolls the dice and moves the number of spaces indicated by the dice two times.
+	* Create a function for the terminal game that takes the current position of the hero and the roll (1-6)
+	* and return the new position.
+*/
+function move($pos, $roll) {
+	// your code here
+	return $pos + ($roll * 2);
+ }
+ 
+ echo move(0, 4);
+ echo '<br>';
+ echo move(3, 6);
+ echo '<br>';
+ echo move(2, 5);
+ echo '<br>';
+ echo "<br>--------------------------<br>";
 
 ?>
