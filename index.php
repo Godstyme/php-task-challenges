@@ -51,15 +51,15 @@ The input string will only consist of lower case letters and/or spaces.
 
 function getCount($str) {
 
-    $vowels = ['a','e','i','o','u'];
-    $vowelsCount = 0;
+	$vowels = ['a','e','i','o','u'];
+	$vowelsCount = 0;
 
-    for ($i=0; $i < strlen($str); $i++) { 
-        $char = $str[$i];
-        $vowelsCount += in_array($char, $vowels);
-    }
+	for ($i=0; $i < strlen($str); $i++) { 
+		$char = $str[$i];
+		$vowelsCount += in_array($char, $vowels);
+	}
 
-    return $vowelsCount;
+	return $vowelsCount;
 }
 echo getCount("abracadabra");
 echo "<br>";
@@ -264,5 +264,38 @@ function move($pos, $roll) {
  echo move(2, 5);
  echo '<br>';
  echo "<br>--------------------------<br>";
+ /*
+ 	DESCRIPTION:
+	An isogram is a word that has no repeating letters, consecutive or non-consecutive. 
+	Implement a function that determines whether a string that contains only letters is an isogram. 
+	Assume the empty string is an isogram. Ignore letter case.
+*/
+ function isIsogram($string) {
+	if (empty($string)) {
+		return true;
+	} else {
+		$lowerCase = strtolower($string);
+		for ($i=0; $i <= strlen($string); $i++) { 
+			for ($j=$i + 1; $j <= strlen($string); $j++) { 
+				if($lowerCase[$i] == $lowerCase[$j])
+            {
+                return false;
+            } 
+			}
+		}
+		return true;
+	}
+	
+ }
+ echo isIsogram("Dermatoglyphics");
+ echo '<br>';
+ echo isIsogram("aba");
+ echo '<br>';
+ echo isIsogram("moOse");
+ echo '<br>';
+ echo isIsogram("isIsogram");
+ echo '<br>';
+ echo isIsogram("");
 
+ echo "<br>--------------------------<br>";
 ?>
