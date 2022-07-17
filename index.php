@@ -1,5 +1,5 @@
 <?php 
-
+echo "<br>----------passwordGenerator----------------<br>";
 /**
     * @param Int $lenght
     * @return String
@@ -19,7 +19,7 @@ function passwordGenerator($lenght)
 
 echo passwordGenerator(8);
 
-echo "<br>--------------------------<br>";
+echo "<br>----------gooseFilter----------------<br>";
 /*
 DESCRIPTION:
 Write a function that takes a list of strings as an argument and returns a filtered list containing the same elements but with the 'geese' removed.
@@ -36,10 +36,8 @@ function gooseFilter($birds) {
     return $newArr;
 }
 print_r(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
-echo "<br>--------------------------<br>";
 
-
-
+echo "<br>-----------getCount---------------<br>";
 /*
 DESCRIPTION:
 Return the number (count) of vowels in the given string.
@@ -64,13 +62,11 @@ function getCount($str) {
 echo getCount("abracadabra");
 echo "<br>";
 echo getCount("Godstime");
-echo "<br>--------------------------<br>";
-
+echo "<br>------------simple OOP Calc--------------<br>";
 /*
 DESCRIPTION:
 A simple calculator built with OOP approach in php
 */
-
 class Calc {
 	private $a;
 	private $b;
@@ -95,9 +91,8 @@ class Calc {
 $mycalc = new Calc(12, 6);
 echo $mycalc-> add()."<br>";
 echo $mycalc-> multiply()."\n"; 
-echo "<br>--------------------------<br>";
 
-
+echo "<br>----------Calculator with OOP and construct property promotion----------------<br>";
 /*
 DESCRIPTION:
 A simple calculator built with OOP approach in php with Constructor property promotion
@@ -142,14 +137,14 @@ try {
 } catch (TypeError $e) {
 	echo "Error!: ".$e->getMessage();
 }
-echo "<br>--------------------------<br>";
 
+
+echo "<br>----------reverseWords----------------<br>";
 /*
 DESCRIPTION:
 Complete the function that accepts a string parameter, and reverses each word in the string. 
 All spaces in the string should be retained.
 */
-
 function reverseWords($str) {
    $newArr = [];
     $a = explode(" ",$str);
@@ -162,8 +157,8 @@ echo reverseWords('ehT kciuq nworb xof spmuj revo eht yzal .god');
 // print_r(reverseWords('The quick brown fox jumps over the lazy dog.'));
 echo "<br>";
 echo reverseWords('Godstime is the best');
-echo "<br>--------------------------<br>";
 
+echo "<br>---------countPositivesSumNegatives-----------------<br>";
 /**
  	* @param  $input
 	* @return $array
@@ -196,9 +191,9 @@ echo '<br>';
 var_dump(countPositivesSumNegatives([]));
 echo '<br>';
 echo json_encode(countPositivesSumNegatives([-15, 2, 3, 4, 5, -11, 7, 8, 9, 10, 6, -12, -13, -14,1]));
-echo "<br>--------------------------<br>";
 
 
+echo "<br>-------------findDifference-------------<br>";
 /**
  	* @param  $array
 	* @return $int
@@ -217,9 +212,8 @@ function findDifference($a, $b) {
  echo findDifference([3, 2, 5], [1, 4, 4]);
  echo "<br>";
  echo findDifference([2, 2, 3], [5, 4, 1]);
- echo "<br>--------------------------<br>";
 
-
+ echo "<br>-----------positive_sum---------------<br>";
  /**
  	* @param  $array
 	* @return $int
@@ -239,9 +233,8 @@ function findDifference($a, $b) {
 	return $positiveNum;
  }
  echo positive_sum([1,-4,7,12] );
- echo "<br>--------------------------<br>";
 
-
+ echo "<br>----------move----------------<br>";
   /**
  	* @param  $int
 	* @return $int
@@ -263,8 +256,8 @@ function move($pos, $roll) {
  echo '<br>';
  echo move(2, 5);
  echo '<br>';
- echo "<br>--------------------------<br>";
 
+ echo "<br>----------isIsogram----------------<br>";
 /**
  	* @param  $string
 	* @return $boolean
@@ -301,5 +294,53 @@ function move($pos, $roll) {
  echo '<br>';
  echo isIsogram("");
 
- echo "<br>--------------------------<br>";
+ echo "<br>----------basicOp----------------<br>";
+ function basicOp($op, $val1, $val2){
+  switch ($op) {
+	case '+':
+		return $val1 + $val2;
+		break;
+	case '-':
+		return $val1 - $val2;
+		break;
+	case '*':
+		return $val1 * $val2;
+		break;
+	case '/':
+		return $val1 / $val2;
+		break;
+	default:
+	 	return "Error!";
+	break;
+  }
+ }
+ echo basicOp('+', 4, 7);
+
+
+echo "<br>-----------square_sum---------------<br>";
+/**
+ 	* @param  $array
+	* @return $nums
+	* @author Godstime
+	* @DESCRIPTION:  Square(n) Sum
+	* Complete the square sum function so that it squares each number passed into it and 
+	* then sums the results together.
+	* For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
+*/
+function square_sum($numbers)  {
+	$sumArr = [];
+	for ($i=0; $i <count($numbers); $i++) { 
+		$num = $numbers[$i];
+		$sqr = pow($num,2);
+		array_push($sumArr,$sqr);
+	}
+	return array_sum($sumArr);
+ }
+ echo square_sum([1,2]);
+ echo '<br>';
+ echo square_sum([1, 2, 2]);
+ echo '<br>';
+ echo square_sum([]);
+ echo "<br>-------------------------<br>";
+
 ?>
